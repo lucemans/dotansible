@@ -51,7 +51,7 @@
         dest: /home/luc/.config/user-dirs.dirs
         owner: luc
         group: luc
-        # xdg-user-dirs-update
+      register: userdirectories
     
     - name: create user-directories
       file:
@@ -65,3 +65,8 @@
         - {src: 'dwnld'}
         - {src: 'pics'}
         - {src: 'docs'}
+
+    - name: trigger user-directories update
+      become_user: luc
+      command: xdg-user-dirs-update
+      when: userdirectories.changed
