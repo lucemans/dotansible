@@ -65,6 +65,7 @@
         - {src: 'dwnld'}
         - {src: 'pics'}
         - {src: 'docs'}
+        - {src: 'dev'}
 
     - name: trigger user-directories update
       become_user: luc
