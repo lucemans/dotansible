@@ -1,0 +1,67 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  tasks:
+    - name: install htop
+      package:
+        name:
+          - htop
+          - tmux
+          - git
+          - dconf-cli
+          - python3-psutil
+
+    - name: copy wallpaper
+      copy:
+        src: files/eff_bg.jpg
+        dest: /usr/share/backgrounds/ansible-wallpaper.jpg
+
+    - name: set wallpaper
+      become_user: luc
+      dconf:
+        key: "/org/gnome/desktop/background/picture-uri"
+        value: "'file:///usr/share/backgrounds/ansible-wallpaper.jpg'"
+    
+    - name: set wallpaper position
+      become_user: luc
+      dconf:
+        key: "/org/gnome/desktop/background/picture-options"
+        value: "'zoom'"
+    
+    - name: copy lucrc
+      copy:
+        src: files/lucrc
+        dest: /home/luc/.lucrc
+        owner: luc
+        group: luc
+    
+    - name: link lucrc
+      lineinfile:
+        path: /home/luc/.bashrc
+        line: source ~/.lucrc
+        state: present
+        owner: luc
+        group: luc
+
+    - name: setup user-directories config
+      copy:
+        src: files/user-dirs.dirs
+        dest: /home/luc/.config/user-dirs.dirs
+        owner: luc
+        group: luc
+        # xdg-user-dirs-update
+    
+    - name: create user-directories
+      file:
+        path: '/home/luc/{{ item.src }}'
+        state: directory
+        mode: '0755'
+        owner: luc
+        group: luc
+      loop:
+        - {src: 'active'}
+        - {src: 'dwnld'}
+        - {src: 'pics'}
+        - {src: 'docs'}
