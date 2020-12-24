@@ -3,6 +3,9 @@
   connection: local
   become: true
 
+  vars_files:
+    - vars/vscode-extensions.yml
+
   tasks:
     - name: install htop
       package:
@@ -15,7 +18,7 @@
 
     - name: copy wallpaper
       copy:
-        src: files/eff_bg.jpg
+        src: files/images/eff_bg.jpg
         dest: /usr/share/backgrounds/ansible-wallpaper.jpg
 
     - name: set wallpaper
@@ -32,7 +35,7 @@
     
     - name: copy lucrc
       copy:
-        src: files/lucrc
+        src: files/config/lucrc
         dest: /home/luc/.lucrc
         owner: luc
         group: luc
@@ -47,7 +50,7 @@
 
     - name: setup user-directories config
       copy:
-        src: files/user-dirs.dirs
+        src: files/config/user-dirs.dirs
         dest: /home/luc/.config/user-dirs.dirs
         owner: luc
         group: luc
@@ -71,3 +74,36 @@
       become_user: luc
       command: xdg-user-dirs-update
       when: userdirectories.changed
+
+    - name: install vscode repo's
+      apt_repository:
+        repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+        state: present
+      register: vscoderepo
+    
+    - name: update apt repos
+      apt:
+        update_cache: yes
+      when: vscoderepo.changed
+
+    - name: install vscode
+      apt:
+        name:
+          - code
+
+    - name: "fetch installed extensions"
+      become_user: luc
+      shell: "code --list-extensions"
+      register: extensionlist
+      changed_when: "'error' in extensionlist.stdout" # So it gives a green checkmark all the time
+
+    - name: "install VS Code extensions"
+      become_user: luc
+      shell: "code --install-extension {{ item }}"
+      when: item not in extensionlist.stdout
+      args:
+        executable: /bin/bash
+      with_items:
+        - "{{ visual_studio_code_extensions }}"
+      register: vscode_result
+      changed_when: "'already installed' not in vscode_result.stdout"
