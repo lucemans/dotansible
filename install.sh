@@ -4,4 +4,6 @@ sudo apt install ansible -y
 
 scp -P 2002 root@lucemans.com:/drv/whale/.vault_key ~/.vault_key
 
-sudo ansible-playbook ./local.yml
+sudo ansible-playbook --vault-password ~/.vault_key ./local.yml
+
+code ~/.luc/setup

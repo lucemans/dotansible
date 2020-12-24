@@ -11,6 +11,8 @@
       - git
       - dconf-cli
       - python3-psutil
+      - latexmk
+      # - texlive-full
 - name: copy lucrc
   copy:
     src: files/config/lucrc
@@ -52,3 +54,12 @@
   become_user: luc
   command: xdg-user-dirs-update
   when: userdirectories.changed
+
+- name: ensure setup dir exists
+  file:
+    path: /home/luc/.luc/setup
+    state: directory
+    recurse: yes
+    mode: '0755'
+    owner: luc
+    group: luc

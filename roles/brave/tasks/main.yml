@@ -18,3 +18,10 @@
   apt:
    name: "brave-browser"
    state: present
+
+- name: print extension list
+  copy:
+    src: ./files/brave.md
+    dest: /home/luc/.luc/setup/brave.md
+    owner: luc
+    group: luc
