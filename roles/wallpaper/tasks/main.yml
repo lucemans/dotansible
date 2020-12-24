@@ -1,0 +1,17 @@
+---
+- name: copy wallpaper
+  copy:
+    src: files/eff_bg.jpg
+    dest: /usr/share/backgrounds/ansible-wallpaper.jpg
+
+- name: set wallpaper
+  become_user: luc
+  dconf:
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "'file:///usr/share/backgrounds/ansible-wallpaper.jpg'"
+
+- name: set wallpaper position
+  become_user: luc
+  dconf:
+    key: "/org/gnome/desktop/background/picture-options"
+    value: "'zoom'"

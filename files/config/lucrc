@@ -3,7 +3,7 @@
 # Aliases
 alias vi='nvim'
 alias server='clear &&ssh root@lucemans.com -p 2002&&clear'
-alias notes='vi /home/luc/Documents/notes.luc'
-alias todo='vi /home/luc/Documents/todo.luc'
+alias notes='vi /home/luc/docs/notes.luc'
+alias todo='vi /home/luc/docs/todo.luc'
 alias bashrc='vi /home/luc/.bashrc'
 alias dcompose='docker-compose build && docker-compose up'
