@@ -8,6 +8,8 @@
   
   roles:
     - base
+    - keys
     - wallpaper
     - brave
+    - discord
     - vscode

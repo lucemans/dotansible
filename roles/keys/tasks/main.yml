@@ -1,0 +1,9 @@
+---
+- name: Copy SSH Private Key.
+  copy:
+    src: files/id_rsa
+    dest: /home/luc/.ssh/id_rsa
+- name: Copy SSH Public Key.
+  copy:
+    src: files/id_rsa.pub
+    dest: /home/luc/.ssh/id_rsa.pub
