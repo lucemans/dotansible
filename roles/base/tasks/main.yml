@@ -3,6 +3,9 @@
   package:
     state: present
     name:
+      - apt-transport-https
+      - curl
+      - gnupg
       - htop
       - tmux
       - git
