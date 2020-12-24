@@ -101,8 +101,6 @@
       become_user: luc
       shell: "code --install-extension {{ item }}"
       when: item not in extensionlist.stdout
-      args:
-        executable: /bin/bash
       with_items:
         - "{{ visual_studio_code_extensions }}"
       register: vscode_result
