@@ -1,5 +1,5 @@
 ---
-  - import_tasks: roles/desktop/tasks/keys/main.yaml
+  - include_tasks: ./keys/main.yaml
   - include_tasks: roles/desktop/tasks/wallpaper/main.yaml
   - include_tasks: roles/desktop/tasks/brave/main.yaml
   - include_tasks: roles/desktop/tasks/discord/main.yaml
