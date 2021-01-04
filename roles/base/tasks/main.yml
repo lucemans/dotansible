@@ -13,6 +13,7 @@
       - python3-psutil
       - latexmk
       # - texlive-full
+
 - name: copy lucrc
   copy:
     src: files/config/lucrc
@@ -25,41 +26,5 @@
     path: /home/luc/.bashrc
     line: source ~/.lucrc
     state: present
-    owner: luc
-    group: luc
-
-- name: setup user-directories config
-  copy:
-    src: files/config/user-dirs.dirs
-    dest: /home/luc/.config/user-dirs.dirs
-    owner: luc
-    group: luc
-  register: userdirectories
-
-- name: create user-directories
-  file:
-    path: '/home/luc/{{ item.src }}'
-    state: directory
-    mode: '0755'
-    owner: luc
-    group: luc
-  loop:
-    - {src: 'active'}
-    - {src: 'dwnld'}
-    - {src: 'pics'}
-    - {src: 'docs'}
-    - {src: 'dev'}
-
-- name: trigger user-directories update
-  become_user: luc
-  command: xdg-user-dirs-update
-  when: userdirectories.changed
-
-- name: ensure setup dir exists
-  file:
-    path: /home/luc/.luc/setup
-    state: directory
-    recurse: yes
-    mode: '0755'
     owner: luc
     group: luc

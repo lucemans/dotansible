@@ -1,0 +1,6 @@
+---
+  - include_tasks: keys/main.yaml
+  - include_tasks: wallpaper/main.yaml
+  - include_tasks: brave/main.yaml
+  - include_tasks: discord/main.yaml
+  - include_tasks: vscode/main.yaml
