@@ -26,7 +26,7 @@
   become_user: luc
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
-    value: "['Print']"
+    value: "'Print'"
   
 - name: Create keybind for normal screenshot key
   become_user: luc
