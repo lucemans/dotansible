@@ -7,7 +7,7 @@
 - name: copy wallpaper2
   copy:
     src: files/eff_bg.jpg
-    dest: /usr/share/backgrounds/eff.jpg
+    dest: /usr/share/backgrounds/eff.jpeg
 
 - name: set wallpaper
   become_user: luc
