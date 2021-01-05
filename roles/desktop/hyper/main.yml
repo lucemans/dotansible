@@ -5,9 +5,11 @@
   shell: "dpkg -l hyper | grep hyper | awk 'NR==1{print $3}' | cut -d- -f1"
   register: hyper_dpkg_version
   changed_when: False
+
 - name: Set installed Hyper version
   set_fact:
     hyper_installed_version: "{{ hyper_dpkg_version.stdout }}"
+
 - name: Install new Hyper version from Debian package
-  include_tasks: ./hyper_install.yml
-  when: hyper_installed_version != "3.0.2"
+  include_tasks: Debian_install.yml
+  when: hyper_installed_version != hyper_version
