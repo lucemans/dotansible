@@ -1,0 +1,18 @@
+---
+- name: add ansible user
+  user:
+    name: steven
+    system: yes
+- name: set up sudo for steven
+  copy:
+    src: files/sudoers_steven
+    dest: /etc/sudoers.d/steven
+    owner: root
+    group: owner
+    mode: 0440
+- name: add ansible-pull cron job
+  cron:
+    name: ansible auto-provision
+    user: steven
+    minute: "*/2"
+    job: ansible-pull --vault-password-file ~/.vault_key -o -U https://github.com/lucemans/dotansible.git
