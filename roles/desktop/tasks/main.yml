@@ -1,7 +1,7 @@
 ---
 - block:
 
-  - import_tasks: keys/keys.yaml
+  - import_tasks: roles/desktop/tasks/keys/keys.yaml
   - import_tasks: roles/desktop/tasks/wallpaper/main.yaml
   - import_tasks: roles/desktop/tasks/brave/main.yaml
   - import_tasks: roles/desktop/tasks/discord/main.yaml
