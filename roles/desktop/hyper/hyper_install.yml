@@ -1,0 +1,20 @@
+---
+- name: Create temporary download directory
+  tempfile:
+    state: directory
+    suffix: hyper
+  register: hyper_tmp
+
+- name: Download Hyper .deb package
+  get_url:
+    url: "https://github.com/zeit/hyper/releases/download/3.0.2/hyper_3.0.2_amd64.deb"
+    dest: "{{ hyper_tmp.path }}/hyper_3.0.2_amd64.deb"
+
+- name: Install Hyper .deb package
+  apt:
+    deb: "{{ hyper_tmp.path }}/hyper_3.0.2_amd64.deb"
+
+- name: Cleanup temp directory
+  file:
+    path: "{{ hyper_tmp.path }}"
+    state: absent

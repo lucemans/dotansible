@@ -18,3 +18,4 @@
   - import_tasks: discord/main.yml
   - import_tasks: slack/main.yml
   - import_tasks: vscode/main.yml
+  - import_tasks: hyper/main.yml
