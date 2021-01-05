@@ -25,9 +25,6 @@
   file:
     path: '/home/luc/{{ item.src }}'
     state: absent
-    mode: '0755'
-    owner: luc
-    group: luc
   loop:
     - {src: 'Desktop'}
     - {src: 'Documents'}
