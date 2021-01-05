@@ -1,8 +1,0 @@
----
-- block:
-
-  - import_tasks: roles/desktop/tasks/keys/keys.yml
-  - import_tasks: wallpaper/main.yml
-  - import_tasks: roles/desktop/tasks/brave/main.yml
-  - import_tasks: roles/desktop/tasks/discord/main.yml
-  - import_tasks: roles/desktop/tasks/vscode/main.yml
