@@ -15,7 +15,6 @@
     key: "/org/gnome/desktop/background/picture-uri"
     value: "'file:///usr/share/backgrounds/ansible-wallpaper2.jpg'"
 
-
 - name: set wallpaper position
   become_user: luc
   dconf:
