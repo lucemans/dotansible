@@ -1,0 +1,5 @@
+---
+- name: Disable the sidebar
+  apt:
+    name: gnome-shell-extension-ubuntu-dock
+    state: absent
