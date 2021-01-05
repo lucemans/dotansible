@@ -17,11 +17,16 @@
     repo: "{{ item }}"
     state: present
   with_items:
-    - "deb https://deb.nodesource.com/node_12.x {{ ansible_distribution_release }} main"
-    - "deb-src https://deb.nodesource.com/node_12.x {{ ansible_distribution_release }} main"
+    - "deb https://deb.nodesource.com/node_14.x {{ ansible_distribution_release }} main"
+    - "deb-src https://deb.nodesource.com/node_14.x {{ ansible_distribution_release }} main"
   register: node_repo
 
 - name: Update apt cache if repo was added.
   apt: update_cache=yes
   when: node_repo.changed
   tags: ['skip_ansible_lint']
+
+- name: Ensure Node.js and npm are installed.
+  apt:
+    name: "nodejs=14.*"
+    state: present
