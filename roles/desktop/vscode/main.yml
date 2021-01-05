@@ -2,10 +2,10 @@
 - name: update apt repos
   apt:
     update_cache: yes
-    
+
 - name: install vscode repo's
   apt_repository:
-    repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+    repo: deb [arch=amd64] https://packages.microsoft.com/repos/vscode/ stable main
     state: present
   register: vscoderepo
 
