@@ -39,3 +39,10 @@
     - "{{ visual_studio_code_extensions }}"
   register: vscode_result
   changed_when: "'already installed' not in vscode_result.stdout"
+
+- name: "Setup the Settings file"
+  copy:
+    src: files/settings.json
+    dest: /home/luc/.config/Code/User/settings.json
+    owner: luc
+    group: luc

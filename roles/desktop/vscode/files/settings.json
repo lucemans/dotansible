@@ -1,0 +1,40 @@
+{
+    "window.titleBarStyle": "custom",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorTheme": "GitHub Dark",
+    "editor.fontFamily": "'Hack Nerd Font FC Ligatured', monospace",
+    "editor.fontLigatures": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": false,
+    "git.enableSmartCommit": true,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.editor.enablePreview": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.iconTheme": "file-icons",
+    "gitlens.hovers.currentLine.over": "line",
+    "explorer.confirmDelete": false,
+    "git.autofetch": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.message.update.show": false,
+    "tabnine.experimentalAutoImports": true,
+    "workbench.sideBar.location": "left"
+}
