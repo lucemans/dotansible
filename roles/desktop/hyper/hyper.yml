@@ -9,7 +9,7 @@
   get_url:
     url: "{{ hyper_deb_url }}"
     dest: "{{ hyper_tmp.path }}/{{ hyper_deb_file }}"
-    checksum: "{{ hyper_deb_checksum }}"
+    # checksum: "{{ hyper_deb_checksum }}"
 
 - name: Install Hyper .deb package
   apt:
