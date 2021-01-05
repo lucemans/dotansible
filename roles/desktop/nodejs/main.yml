@@ -33,7 +33,7 @@
 
 - name: Add yarn repository
   apt_repository:
-    repo: "deb https://dl.yarnpkg.com/debian/ stable main"
+    repo: deb https://dl.yarnpkg.com/debian/ stable main
     state: present
   register: yarn_repo
 
