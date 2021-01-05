@@ -1,5 +1,22 @@
 ---
-- name: Disable the sidebar
-  apt:
-    name: gnome-shell-extension-ubuntu-dock
-    state: absent
+- name: Disable the Sidebar
+  become_user: luc
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/autohide"
+    value: "false"
+
+- name: Disable the Sidebar 2
+  become_user: luc
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/dock-fixed"
+    value: "false"
+
+- name: Disable the Sidebar 3
+  become_user: luc
+  dconf:
+    key: "/org/gnome/shell/extensions/dash-to-dock/intellihide"
+    value: "false"
+
+    # gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
+    # gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+    # gsettings set org.gnome.shell.extensions.dash-to-dock intellihide false
