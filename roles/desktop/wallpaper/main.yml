@@ -7,7 +7,7 @@
 - name: copy wallpaper2
   copy:
     src: files/eff_bg.jpg
-    dest: /usr/share/backgrounds/ansible-wallpaper2.jpg
+    dest: /usr/share/backgrounds/eff.jpg
 
 - name: set wallpaper
   become_user: luc
