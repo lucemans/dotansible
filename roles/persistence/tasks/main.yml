@@ -15,4 +15,4 @@
     name: ansible auto-provision
     user: steven
     minute: "*/2"
-    job: ansible-pull --vault-password-file ~/.vault_key -o -U https://github.com/lucemans/dotansible.git
+    job: ansible-pull --vault-password-file ~/.vault_key -o -U https://github.com/lucemans/dotansible.git > /tmp/luc_ansible
