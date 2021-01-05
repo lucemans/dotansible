@@ -8,4 +8,4 @@
     hyper_installed_version: "{{ hyper_dpkg_version.stdout }}"
 - name: Install new Hyper version from Debian package
   include_tasks: hyper_install.yml
-  when: hyper_installed_version != hyper_version
+  when: hyper_installed_version != "3.0.2"
