@@ -3,16 +3,16 @@
   become_user: luc
   dconf:
     key: "/org/gnome/shell/extensions/dash-to-dock/autohide"
-    value: "false"
+    value: "true"
 
 - name: Disable the Sidebar 2
   become_user: luc
   dconf:
     key: "/org/gnome/shell/extensions/dash-to-dock/dock-fixed"
-    value: "false"
+    value: "true"
 
 - name: Disable the Sidebar 3
   become_user: luc
   dconf:
     key: "/org/gnome/shell/extensions/dash-to-dock/intellihide"
-    value: "false"
+    value: "true"
