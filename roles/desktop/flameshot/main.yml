@@ -18,14 +18,14 @@
 - name: Name it keybind for normal screenshot key
   become_user: luc
   dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
+    key: "org/gnome/settings-daemon/plugins/media-keys/custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
     value: "FLAMESHOT (ANSIBLE)"
   
 
 - name: Bind it keybind for normal screenshot key
   become_user: luc
   dconf:
-    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
+    key: "org/gnome/settings-daemon/plugins/media-keys/custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
     value: "/usr/bin/flameshot gui"
   
 - name: Command it keybind for normal screenshot key
