@@ -13,3 +13,8 @@
 - name: Install new Hyper version from Debian package
   include_tasks: ./hyper/hyper.yml
   when: hyper_installed_version != hyper_version
+
+- name: Ensure the settings are copied over
+  copy:
+    src: files/hyper.js
+    dest: /home/luc/.hyper.js
