@@ -6,6 +6,7 @@
   - import_tasks: dirs/main.yml
   - import_tasks: gsettings/main.yml
   - import_tasks: disable-sidebar/main.yml
+  - import_tasks: flameshot/main.yml
   - import_tasks: brave/main.yml
   - import_tasks: discord/main.yml
   - import_tasks: vscode/main.yml
