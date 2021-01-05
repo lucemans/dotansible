@@ -147,8 +147,7 @@ module.exports = {
     //   `@company/project`
     //   `project#1.0.1`
     plugins: [
-      'hyperterm-panda',
-      'hyper-transparent'
+      'hyperterm-panda'
     ],
   
     // in development, you can create a directory under
