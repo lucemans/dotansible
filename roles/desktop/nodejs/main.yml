@@ -30,3 +30,19 @@
   apt:
     name: "nodejs=14.*"
     state: present
+
+- name: Add yarn repository
+  apt_repository:
+    repo: "deb https://dl.yarnpkg.com/debian/ stable main"
+    state: present
+  register: yarn_repo
+
+- name: Ensure that the repo's are updated
+  apt: update_cache=yes
+  when: yarn_repo.changed
+  tags: ['skip_ansible_lint']
+
+- name: Ensure yarn is installed
+  apt:
+    name: "yarn"
+    state: present
