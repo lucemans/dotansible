@@ -31,6 +31,11 @@
     name: "nodejs=14.*"
     state: present
 
+- name: Ensure Yarn key is added
+  apt_key:
+    url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
+    state: present
+
 - name: Add yarn repository
   apt_repository:
     repo: deb https://dl.yarnpkg.com/debian/ stable main
