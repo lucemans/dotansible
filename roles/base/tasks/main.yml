@@ -12,6 +12,7 @@
       - dconf-cli
       - python3-psutil
       - latexmk
+      - xclip
       # - texlive-full
 
 - name: copy lucrc
