@@ -21,6 +21,23 @@
     - {src: 'docs'}
     - {src: 'dev'}
 
+- name: delete old user-directories
+  file:
+    path: '/home/luc/{{ item.src }}'
+    state: absent
+    mode: '0755'
+    owner: luc
+    group: luc
+  loop:
+    - {src: 'Desktop'}
+    - {src: 'Documents'}
+    - {src: 'Downloads'}
+    - {src: 'Music'}
+    - {src: 'Pictures'}
+    - {src: 'Public'}
+    - {src: 'Templates'}
+    - {src: 'Videos'}
+
 - name: trigger user-directories update
   become_user: luc
   command: xdg-user-dirs-update
