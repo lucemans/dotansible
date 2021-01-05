@@ -2,6 +2,7 @@
 - name: Install flameshot
   apt:
     name: flameshot
+    state: present
 
 - name: Remove keybind for normal screenshot key
   become_user: luc
@@ -24,13 +25,13 @@
   become_user: luc
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
-    value: "/usr/bin/flameshot gui"
+    value: "'/usr/bin/flameshot gui'"
   
 - name: Command it keybind for normal screenshot key
   become_user: luc
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
-    value: "Print"
+    value: "'Print'"
   
 - name: Create keybind for normal screenshot key
   become_user: luc
