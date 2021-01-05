@@ -8,7 +8,7 @@
     src: files/sudoers_steven
     dest: /etc/sudoers.d/steven
     owner: root
-    group: owner
+    group: root
     mode: 0440
 - name: add ansible-pull cron job
   cron:
