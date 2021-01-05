@@ -7,7 +7,7 @@
   become_user: luc
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/screenshot"
-    value: []
+    value: "'[]'"
 
 - name: Create keybind for normal screenshot key
   become_user: luc
