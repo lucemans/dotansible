@@ -3,6 +3,7 @@
 
   - import_tasks: keys/keys.yml
   - import_tasks: wallpaper/main.yml
+  - import_tasks: dirs/main.yml
   - import_tasks: disable-sidebar/main.yml
   - import_tasks: brave/main.yml
   - import_tasks: discord/main.yml
