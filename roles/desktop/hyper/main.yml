@@ -1,4 +1,6 @@
 ---
+- name: Load hyper variables
+  include_vars: "vars.yml"
 - name: Get installed Hyper version
   shell: "dpkg -l hyper | grep hyper | awk 'NR==1{print $3}' | cut -d- -f1"
   register: hyper_dpkg_version

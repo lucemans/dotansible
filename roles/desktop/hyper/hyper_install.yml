@@ -7,12 +7,13 @@
 
 - name: Download Hyper .deb package
   get_url:
-    url: "https://github.com/zeit/hyper/releases/download/3.0.2/hyper_3.0.2_amd64.deb"
-    dest: "{{ hyper_tmp.path }}/hyper_3.0.2_amd64.deb"
+    url: "{{ hyper_deb_url }}"
+    dest: "{{ hyper_tmp.path }}/{{ hyper_deb_file }}"
+    checksum: "{{ hyper_deb_checksum }}"
 
 - name: Install Hyper .deb package
   apt:
-    deb: "{{ hyper_tmp.path }}/hyper_3.0.2_amd64.deb"
+    deb: "{{ hyper_tmp.path }}/{{ hyper_deb_file }}"
 
 - name: Cleanup temp directory
   file:
