@@ -2,12 +2,19 @@
 - block:
 
   - import_tasks: keys/keys.yml
+
+  # Tweaks
   - import_tasks: wallpaper/main.yml
   - import_tasks: dirs/main.yml
   - import_tasks: gsettings/main.yml
   - import_tasks: disable-sidebar/main.yml
   - import_tasks: flameshot/main.yml
+
+  # Tools
   - import_tasks: nodejs/main.yml
+
+  # Software
   - import_tasks: brave/main.yml
   - import_tasks: discord/main.yml
+  - import_tasks: slack/main.yml
   - import_tasks: vscode/main.yml
