@@ -37,8 +37,9 @@
     state: present
   register: yarn_repo
 
-- name: Ensure that the repo's are updated
-  apt: update_cache=yes
+- name: Ensure that the repo are updated
+  apt:
+    update_cache: yes
   when: yarn_repo.changed
   tags: ['skip_ansible_lint']
 
