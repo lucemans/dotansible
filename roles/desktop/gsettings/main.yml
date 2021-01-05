@@ -2,5 +2,15 @@
 - name: Disable desktop icons
   become_user: luc
   dconf:
-    key: "/org/gnome/desktop/background/show-desktop-icons"
+    key: "/org/gnome/shell/extensions/desktop-icons/show-home"
+    value: "false"
+- name: Enable Mount icons
+  become_user: luc
+  dconf:
+    key: "/org/gnome/shell/extensions/desktop-icons/show-mount"
+    value: "true"
+- name: Disable Trash icons
+  become_user: luc
+  dconf:
+    key: "/org/gnome/shell/extensions/desktop-icons/show-trash"
     value: "false"
