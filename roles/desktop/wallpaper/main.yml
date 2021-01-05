@@ -1,14 +1,20 @@
 ---
-- name: copy wallpaper
+- name: copy wallpaper1
+  copy:
+    src: files/pexels-photo-2469122.jpeg
+    dest: /usr/share/backgrounds/ansible-wallpaper1.jpg
+
+- name: copy wallpaper2
   copy:
     src: files/eff_bg.jpg
-    dest: /usr/share/backgrounds/ansible-wallpaper.jpg
+    dest: /usr/share/backgrounds/ansible-wallpaper2.jpg
 
 - name: set wallpaper
   become_user: luc
   dconf:
     key: "/org/gnome/desktop/background/picture-uri"
-    value: "'file:///usr/share/backgrounds/ansible-wallpaper.jpg'"
+    value: "'file:///usr/share/backgrounds/ansible-wallpaper1.jpg'"
+
 
 - name: set wallpaper position
   become_user: luc
