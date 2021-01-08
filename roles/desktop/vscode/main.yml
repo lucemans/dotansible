@@ -1,7 +1,4 @@
 ---
-- name: update apt repos
-  apt:
-    update_cache: yes
 
 - name: install key (apt)
   become: yes
