@@ -1,13 +1,14 @@
 ---
-- name: Add Azure Key
+- name: Import the APT repo key (Debian)
   apt_key:
-    url: https://packages.microsoft.com/keys/microsoft.asc
-    state: present
-- name: install azure repo's
+    keyserver: packages.microsoft.com
+    id: 52E16F86FEE04B979B07E28DB02C46DF417A0893
+
+- name: Create the APT repository (Debian)
   apt_repository:
-    repo: deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ stable main
+    repo: "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ {{ansible_distribution_release}} main"
+    filename: azure-cli
     state: present
-  register: azurerepo
 
 - name: update apt repos
   apt:
