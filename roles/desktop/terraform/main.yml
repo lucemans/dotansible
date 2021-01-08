@@ -1,0 +1,21 @@
+---
+- name: Import the APT repo key (Debian)
+  apt_key:
+    url: "https://apt.releases.hashicorp.com/gpg"
+
+- name: Create the APT repository (Debian)
+  apt_repository:
+    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com {{ansible_distribution_release}} main"
+    filename: terraform
+    state: present
+  register: azurerepo
+
+- name: update apt repos
+  apt:
+    update_cache: yes
+  when: azurerepo.changed
+
+- name: install terraform
+  apt:
+   name: "terraform"
+   state: present

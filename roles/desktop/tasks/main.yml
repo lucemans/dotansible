@@ -20,3 +20,4 @@
   - import_tasks: vscode/main.yml
   - import_tasks: hyper/main.yml
   - import_tasks: azure/main.yml
+  - import_tasks: terraform/main.yml
