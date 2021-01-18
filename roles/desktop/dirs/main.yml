@@ -57,7 +57,7 @@
 - name: create online-directory
   file:
     path: '/home/luc/online'
-    state: directory
+    state: file
 
 - name: Mount remote directory
   become_user: luc
