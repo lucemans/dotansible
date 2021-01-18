@@ -5,9 +5,11 @@ visual_studio_code_extensions:
  - alefragnani.Bookmarks
  - arcticicestudio.nord-visual-studio-code
  - austin.code-gnu-global
+ - bradlc.vscode-tailwindcss
  - bungcip.better-toml
  - christian-kohler.path-intellisense
  - CoenraadS.bracket-pair-colorizer
+ - cschleiden.vscode-github-actions
  - DavidAnson.vscode-markdownlint
  - dbaeumer.vscode-eslint
  - denoland.vscode-deno
@@ -28,12 +30,14 @@ visual_studio_code_extensions:
  - GitHub.github-vscode-theme
  - GraphQL.vscode-graphql
  - hashicorp.terraform
+ - HookyQR.beautify
  - idleberg.hopscotch
  - James-Yu.latex-workshop
  - joaompinto.vscode-graphviz
  - jolaleye.horizon-theme-vscode
  - juninhosilva.package-plus-plus
  - kisstkondoros.vscode-gutter-preview
+ - KnisterPeter.vscode-github
  - kshetline.ligatures-limited
  - kumar-harsh.graphql-for-vscode
  - matklad.rust-analyzer
