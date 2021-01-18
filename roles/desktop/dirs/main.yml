@@ -20,6 +20,7 @@
     - {src: 'pics'}
     - {src: 'docs'}
     - {src: 'dev'}
+    - {src: 'online'}
 
 - name: delete old user-directories
   file:
@@ -32,7 +33,11 @@
     - {src: 'Music'}
     - {src: 'Pictures'}
     - {src: 'Public'}
-    - {src: 'online'}
+    - {src: 'Templates'}
+    - {src: 'Videos'}
+
+- name: trigger user-directories update
+  become_user: luc
   command: xdg-user-dirs-update
   when: userdirectories.changed
 
@@ -49,11 +54,6 @@
   apt:
     name: sshfs
     state: present
-
-- name: Ensure the ~/online dir exists
-  file:
-    path: '/home/luc/online'
-    state: directory
 
 - name: Mount remote directory
   become_user: luc
