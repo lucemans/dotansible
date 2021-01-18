@@ -20,7 +20,6 @@
     - {src: 'pics'}
     - {src: 'docs'}
     - {src: 'dev'}
-    - {src: 'online'}
 
 - name: delete old user-directories
   file:
@@ -54,6 +53,11 @@
   apt:
     name: sshfs
     state: present
+
+- name: create online-directory
+  file:
+    path: '/home/luc/online'
+    state: directory
 
 - name: Mount remote directory
   become_user: luc
