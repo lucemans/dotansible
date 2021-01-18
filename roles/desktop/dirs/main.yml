@@ -55,4 +55,9 @@
     name: sshfs
     state: present
 
-# - name: Mount remote directory
+- name: Mount remote directory
+  become_user: luc
+  shell: "sshfs -p 2002 luc@lucemans.com:/drv/lion/luc /home/luc/online"
+  args:
+    chdir: /home/luc
+  changed_when: false
