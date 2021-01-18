@@ -60,6 +60,7 @@
   args:
     chdir: /home/luc
   changed_when: false
+  ignore_errors: yes
 
 - name: ensure setup dir exists
   file:
