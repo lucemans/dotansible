@@ -54,10 +54,21 @@
     name: sshfs
     state: present
 
-- name: create online-directory
+- name: Unmount remote directory
+  become_user: luc
+  shell: "umount /home/luc/online"
+  args:
+    chdir: /home/luc
+  changed_when: false
+
+- name: ensure setup dir exists
   file:
-    path: '/home/luc/online'
-    state: file
+    path: /home/luc/online
+    state: directory
+    recurse: yes
+    mode: '0755'
+    owner: luc
+    group: luc
 
 - name: Mount remote directory
   become_user: luc
