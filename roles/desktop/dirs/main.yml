@@ -48,3 +48,10 @@
     mode: '0755'
     owner: luc
     group: luc
+
+- name: Ensure sshfs is installed
+  apt:
+    name: sshfs
+    state: present
+
+# - name: Mount remote directory
