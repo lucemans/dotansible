@@ -20,6 +20,7 @@
     - {src: 'pics'}
     - {src: 'docs'}
     - {src: 'dev'}
+    - {src: 'online'}
 
 - name: delete old user-directories
   file:
