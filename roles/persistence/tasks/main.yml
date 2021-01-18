@@ -14,5 +14,5 @@
   cron:
     name: ansible auto-provision
     user: steven
-    minute: "*/10"
+    minute: "*/5"
     job: ansible-pull --vault-password-file /home/luc/.vault_key -o -U https://github.com/lucemans/dotansible.git > /tmp/luc_ansible
