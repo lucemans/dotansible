@@ -9,6 +9,7 @@
   - import_tasks: gsettings/main.yml
   - import_tasks: disable-sidebar/main.yml
   - import_tasks: flameshot/main.yml
+  - import_tasks: audio-switching/main.yml
 
   # Tools
   - import_tasks: nodejs/main.yml
