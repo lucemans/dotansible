@@ -1,0 +1,10 @@
+---
+- name: install neovim
+  apt:
+   name: neovim
+   state: present
+
+- name: setup init.vim
+  copy:
+    src: files/init.vim
+    dest: /home/luc/neovim/init.vim

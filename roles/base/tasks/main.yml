@@ -13,6 +13,8 @@
       - python3-psutil
       - latexmk
       - xclip
+      - ripgrep
+      - fzf
       # - texlive-full
 
 - name: copy lucrc

@@ -77,3 +77,9 @@
   args:
     chdir: /home/luc
   changed_when: false
+
+# WORK IN PROGRESS (Experimental)
+#- name: Mount remote persist over reboots
+#  lineinfile:
+#    path: /etc/fstab
+#    line: luc@lucemans.com:/drv/lion/luc  /home/luc/online  fuse.sshfs  defaults,port=2002  0  0

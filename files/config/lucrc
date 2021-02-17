@@ -10,6 +10,8 @@ alias dcompose='docker-compose build && docker-compose up'
 alias clip='xclip -selection c'
 alias clipboard='xclip -selection c'
 alias k='kubectl'
+alias dev='INPUT=$(ls ~/dev/ | fzf); if [[ ${#INPUT} -ne 0 ]]; then (echo -n '/home/luc/dev/'$INPUT | xargs code); fi'
+# Add NVIM
 
 # Time / Date fix for Ubuntu, as per https://askubuntu.com/questions/580537/calendar-and-file-manager-partly-in-german
 export LC_TIME=en_DK.UTF-8

@@ -22,3 +22,4 @@
   - import_tasks: azure/main.yml
   - import_tasks: terraform/main.yml
   - import_tasks: kubectl/main.yml
+  - import_tasks: vim/main.yml
