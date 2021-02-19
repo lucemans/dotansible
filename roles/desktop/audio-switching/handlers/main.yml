@@ -1,5 +1,0 @@
-- name: restart pulseaudio
-  shell:
-    chdir: /
-    cmd: "pulseaudio -k"
-  become: true

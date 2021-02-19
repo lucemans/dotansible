@@ -4,4 +4,4 @@
     path: /etc/pulse/default.pa
     state: absent
     regexp: 'load-module module-switch-on-port-available'
-  notify: restart pulseaudio
+  become: true
