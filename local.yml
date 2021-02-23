@@ -5,8 +5,10 @@
 
   vars_files:
     - vars/vscode-extensions.yml
+    - vars/calibrate.yml
   
   roles:
     - base
-    - desktop
     - persistence
+    - desktop
+    - calibrate
