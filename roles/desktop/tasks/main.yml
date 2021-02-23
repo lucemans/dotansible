@@ -16,6 +16,7 @@
 
   # Software
   - import_tasks: brave/main.yml
+  - import_tasks: signal/main.yml
   - import_tasks: discord/main.yml
   - import_tasks: slack/main.yml
   - import_tasks: vscode/main.yml

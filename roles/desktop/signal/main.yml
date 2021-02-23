@@ -1,0 +1,20 @@
+---
+- name: Add signal signing key
+  apt_key:
+    url: https://updates.signal.org/desktop/apt/keys.asc
+    state: present
+- name: install signal repo's
+  apt_repository:
+    repo: deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main
+    state: present
+  register: signalrepo
+
+- name: update apt repos
+  apt:
+    update_cache: yes
+  when: signalrepo.changed
+
+- name: install signal
+  apt:
+   name: "signal-desktop"
+   state: present
