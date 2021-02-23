@@ -19,6 +19,15 @@
     owner: luc
     group: luc
 
+
+- name: Ensure IP Var Exists
+  lineinfile:
+    path: /home/luc/.bashrc
+    line: export LOKALHOST_IP=$(ip -4 addr show docker0 | grep -Po 'inet \K[\d.]+')
+    state: present
+    owner: luc
+    group: luc
+
 - name: Setup Docker Network and Traefik
   when: not lokalhost_register.stat.exists
   shell: cd $LOKALHOST_PATH/basic-infra/traefik && docker network create proxy && docker-compose up -d
