@@ -1,0 +1,25 @@
+---
+- name: Check if has been installed
+  stat:
+    path: /home/luc/lokal.host
+  register: lokalhost_register
+
+- name: Git clone
+  when: not lokalhost_register.stat.exists
+  shell: git clone -c advice.detachedHead=false ssh://git@ssh.ccr.calibrate.be:10001/calibrate/lokal-host.git -b 3.2 lokal.host
+  args:
+    chdir: /home/luc
+  become_user: luc
+
+- name: Ensure Path Exists
+  lineinfile:
+    path: /home/luc/.bashrc
+    line: export LOKALHOST_PATH=~/lokal.host
+    state: present
+    owner: luc
+    group: luc
+
+- name: Setup Docker Network and Traefik
+  when: not lokalhost_register.stat.exists
+  shell: cd $LOKALHOST_PATH/basic-infra/traefik && docker network create proxy && docker-compose up -d
+  become_user: luc
