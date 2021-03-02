@@ -2,6 +2,7 @@
 - block:
 
   - import_tasks: keys/keys.yml
+  - import_tasks: aliases/main.yml
 
   - import_tasks: docker/main.yml
 

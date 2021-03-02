@@ -1,0 +1,2 @@
+#!/bin/bash
+alias calidev='INPUT=$(ls ~/lokal.host/projects/ | fzf); if [[ ${#INPUT} -ne 0 ]]; then (echo -n '/home/luc/lokal.host/projects/'$INPUT | xargs code); fi'

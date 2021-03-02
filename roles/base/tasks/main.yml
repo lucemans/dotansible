@@ -15,6 +15,8 @@
       - xclip
       - ripgrep
       - fzf
+      - libasound2-dev # Midi Controller
+      - mongodb-clients
       # - texlive-full
 
 - name: copy lucrc

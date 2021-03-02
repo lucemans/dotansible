@@ -1,0 +1,15 @@
+---
+- name: copy lucrc
+  copy:
+    src: files/config/calirc
+    dest: /home/luc/.calirc
+    owner: luc
+    group: luc
+
+- name: link calirc
+  lineinfile:
+    path: /home/luc/.bashrc
+    line: source ~/.calirc
+    state: present
+    owner: luc
+    group: luc
