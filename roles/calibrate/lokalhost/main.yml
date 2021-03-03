@@ -30,5 +30,5 @@
 
 - name: Setup Docker Network and Traefik
   when: not lokalhost_register.stat.exists
-  shell: cd $LOKALHOST_PATH/basic-infra/traefik && docker network create proxy && docker-compose up -d
+  shell: cd /home/luc/lokalhost/basic-infra/traefik && docker network create proxy && docker-compose up -d
   become_user: luc

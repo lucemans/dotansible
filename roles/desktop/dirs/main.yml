@@ -54,13 +54,13 @@
     name: sshfs
     state: present
 
-- name: Unmount remote directory
-  become_user: luc
-  shell: "umount /home/luc/online"
-  args:
-    chdir: /home/luc
-  changed_when: false
-  ignore_errors: yes
+# - name: Unmount remote directory
+#   become_user: luc
+#   shell: "umount /home/luc/online"
+#   args:
+#     chdir: /home/luc
+#   changed_when: false
+#   ignore_errors: yes
 
 - name: ensure setup dir exists
   file:
@@ -71,12 +71,12 @@
     owner: luc
     group: luc
 
-- name: Mount remote directory
-  become_user: luc
-  shell: "sshfs -p 2002 luc@lucemans.com:/drv/lion/luc /home/luc/online"
-  args:
-    chdir: /home/luc
-  changed_when: false
+#- name: Mount remote directory
+#  become_user: luc
+#  shell: "sshfs -p 2002 luc@lucemans.com:/drv/lion/luc /home/luc/online"
+#  args:
+#    chdir: /home/luc
+#  changed_when: false
 
 # WORK IN PROGRESS (Experimental)
 #- name: Mount remote persist over reboots
