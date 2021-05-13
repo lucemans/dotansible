@@ -1,0 +1,9 @@
+---
+- name: Install Kitty
+  apt:
+    name: kitty
+    state: present
+- name: copy kittyconf
+  copy:
+    src: files/kitty.conf
+    dest: /home/luc/.config/kitty/kitty.conf

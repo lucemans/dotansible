@@ -15,6 +15,7 @@
       - xclip
       - ripgrep
       - fzf
+      - micro
       - libasound2-dev # Midi Controller
       # - texlive-full
 

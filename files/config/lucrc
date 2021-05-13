@@ -2,7 +2,7 @@
 
 # Aliases
 alias vi='nvim'
-alias server='clear &&ssh root@lucemans.com -p 2002&&clear'
+#alias server='clear &&ssh root@lucemans.com&&clear'
 alias notes='vi /home/luc/docs/notes.luc'
 alias todo='vi /home/luc/docs/todo.luc'
 alias bashrc='vi /home/luc/.bashrc'
@@ -10,8 +10,28 @@ alias dcompose='docker-compose build && docker-compose up'
 alias clip='xclip -selection c'
 alias clipboard='xclip -selection c'
 alias k='kubectl'
-alias dev='INPUT=$(ls ~/dev/ | fzf); if [[ ${#INPUT} -ne 0 ]]; then (echo -n '/home/luc/dev/'$INPUT | xargs code); fi'
+#alias dev='INPUT=$(ls ~/dev/ | fzf); if [[ ${#INPUT} -ne 0 ]]; then (echo -n '/home/luc/dev/'$INPUT | xargs code); fi'
+alias otp='SEARCH=$(ykman oath accounts code | awk '"'"'{$NF=""; print $0}'"'"' | fzf) && ykman oath accounts code | grep $SEARCH | awk '"'"'{print $NF}'"'"' | xclip -sel clip'
 # Add NVIM
+
+LUC_DEV_FOLDER='/home/luc/dev/'
+function dev () {
+    LUC_INPUT=$(ls $LUC_DEV_FOLDER | fzf --reverse)
+    if [[ ${#LUC_INPUT} -ne 0 ]]; then
+        LUC_INPUT2=$LUC_DEV_FOLDER$LUC_INPUT;
+        cd $LUC_INPUT2
+        echo -e '\e[37m======================================\e[39m\n\n    Opening project \e[36m'$LUC_INPUT'\e[39m\n\n\e[37m======================================'
+        code .
+    fi
+}
+
+function linstall () {
+    LUC_INPUT=$(apt-cache search . | awk -F' - ' '{print $1}' | sort | uniq | sort | fzf -m --reverse)
+    if [[ ${#LUC_INPUT} -ne 0 ]]; then
+        # echo -e '\e[37m======================================\e[39m\n\n    Opening project \e[36m'$LUC_INPUT'\e[39m\n\n\e[37m======================================'
+        sudo apt install $LUC_INPUT
+    fi
+}
 
 # Time / Date fix for Ubuntu, as per https://askubuntu.com/questions/580537/calendar-and-file-manager-partly-in-german
 export LC_TIME=en_DK.UTF-8

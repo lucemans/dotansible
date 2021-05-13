@@ -2,9 +2,11 @@
 visual_studio_code_extensions:
  - aaron-bond.better-comments
  - akamud.vscode-theme-onedark
+ - AlDuncanson.react-hooks-snippets
  - alefragnani.Bookmarks
  - arcticicestudio.nord-visual-studio-code
  - austin.code-gnu-global
+ - bmewburn.vscode-intelephense-client
  - bradlc.vscode-tailwindcss
  - bungcip.better-toml
  - christian-kohler.path-intellisense
@@ -12,7 +14,6 @@ visual_studio_code_extensions:
  - cschleiden.vscode-github-actions
  - DavidAnson.vscode-markdownlint
  - dbaeumer.vscode-eslint
- - denoland.vscode-deno
  - devine-davies.make-hidden
  - dracula-theme.theme-dracula
  - DryWolf.dark-plus-plus-theme
@@ -21,20 +22,27 @@ visual_studio_code_extensions:
  - ElAnandKumar.el-vsc-product-icon-theme
  - emilast.LogFileHighlighter
  - emmanuelbeziat.vscode-great-icons
+ - Equinusocio.vsc-community-material-theme
+ - Equinusocio.vsc-material-theme
+ - equinusocio.vsc-material-theme-icons
  - esbenp.prettier-vscode
  - fabiospampinato.vscode-todo-plus
+ - felixfbecker.php-intellisense
  - file-icons.file-icons
  - formulahendry.auto-rename-tag
  - foxundermoon.shell-format
  - gamunu.vscode-yarn
  - GitHub.github-vscode-theme
+ - golang.go
  - GraphQL.vscode-graphql
  - hashicorp.terraform
  - HookyQR.beautify
  - idleberg.hopscotch
  - James-Yu.latex-workshop
+ - jcbuisson.vue
  - joaompinto.vscode-graphviz
  - jolaleye.horizon-theme-vscode
+ - jpoissonnier.vscode-styled-components
  - juninhosilva.package-plus-plus
  - kisstkondoros.vscode-gutter-preview
  - KnisterPeter.vscode-github
@@ -42,9 +50,11 @@ visual_studio_code_extensions:
  - kumar-harsh.graphql-for-vscode
  - matklad.rust-analyzer
  - mechatroner.rainbow-csv
+ - mhutchie.git-graph
  - MrAwesomeRocks.lipsum-generator
  - ms-azuretools.vscode-docker
  - ms-python.python
+ - ms-python.vscode-pylance
  - ms-toolsai.jupyter
  - ms-vscode-remote.remote-containers
  - ms-vscode-remote.remote-ssh
@@ -53,6 +63,7 @@ visual_studio_code_extensions:
  - ms-vscode.vs-keybindings
  - ms-vsliveshare.vsliveshare
  - ms-vsliveshare.vsliveshare-audio
+ - naumovs.color-highlight
  - Orta.vscode-jest
  - PKief.material-icon-theme
  - platformio.platformio-ide
@@ -60,13 +71,17 @@ visual_studio_code_extensions:
  - ritwickdey.LiveServer
  - RobbOwen.synthwave-vscode
  - rust-lang.rust
+ - sdras.night-owl
  - sibiraj-s.vscode-scss-formatter
+ - sleistner.vscode-fileutils
  - syler.sass-indented
  - TabNine.tabnine-vscode
+ - teabyii.ayu
  - tinkertrain.theme-panda
- - VisualStudioOnlineApplicationInsights.application-insights
  - vivaxy.vscode-conventional-commits
  - vscode-icons-team.vscode-icons
  - wayou.vscode-todo-highlight
  - whizkydee.material-palenight-theme
+ - wholroyd.HCL
  - yzhang.markdown-all-in-one
+ - zhuangtongfa.material-theme

@@ -9,7 +9,6 @@
   - import_tasks: gsettings/main.yml
   - import_tasks: disable-sidebar/main.yml
   - import_tasks: flameshot/main.yml
-  - import_tasks: audio-switching/main.yml
 
   # Tools
   - import_tasks: nodejs/main.yml
@@ -18,10 +17,7 @@
   - import_tasks: brave/main.yml
   - import_tasks: signal/main.yml
   - import_tasks: discord/main.yml
-  - import_tasks: slack/main.yml
   - import_tasks: vscode/main.yml
-  - import_tasks: hyper/main.yml
-  - import_tasks: azure/main.yml
+  # - import_tasks: hyper/main.yml
   - import_tasks: terraform/main.yml
   - import_tasks: kubectl/main.yml
-  # - import_tasks: vim/main.yml

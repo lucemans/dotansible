@@ -1,8 +1,0 @@
----
-#- name: Log into private registry and force re-authorization
-#  community.docker.docker_login:
-#    registry_url: "{{ calibrate_docker_repo }}"
-#    username: "{{ calibrate_docker_username }}"
-#    password: "{{ calibrate_docker_password }}"
-#    reauthorize: yes
-#  become_user: luc

@@ -9,6 +9,6 @@
   
   roles:
     - base
-    - persistence
+    # - persistence
     - desktop
-    - calibrate
+    - business

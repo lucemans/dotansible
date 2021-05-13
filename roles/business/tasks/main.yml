@@ -13,3 +13,9 @@
     state: present
     owner: luc
     group: luc
+
+- name: Install Slack
+  snap:
+    name: slack
+    classic: yes
+    state: present
