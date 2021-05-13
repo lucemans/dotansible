@@ -1,0 +1,23 @@
+---
+- name: Copy SSH Private Key.
+  copy:
+    src: files/id_rsa
+    dest: /home/luc/.ssh/id_rsa
+- name: Copy SSH Public Key.
+  copy:
+    src: files/id_rsa.pub
+    dest: /home/luc/.ssh/id_rsa.pub
+
+- name: Ensure the Alias Directory exists
+  file:
+    path: /home/luc/.ssh/conf.d
+    state: directory
+
+- name: Ensure Zeus alias exists
+  blockinfile:
+    path: /home/luc/.ssh/config
+    block: |
+      Host server
+        HostName lucemans.com
+        User luc
+        Port 22

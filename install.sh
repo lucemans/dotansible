@@ -4,6 +4,7 @@ sudo apt update
 sudo apt install ansible -y
 
 sudo ansible-galaxy collection install community.docker
+# sudo ansible-galaxy collection install community.general
 
 scp root@lucemans.com:/drv/whale/.vault_key ~/.vault_key
 
